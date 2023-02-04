@@ -1,3 +1,3 @@
 # JS_Game_Engine
 
-Ignore this project, will eventually turn into a webGL thing
+Ignore this project, I had no idea what I was doing when I started this.
