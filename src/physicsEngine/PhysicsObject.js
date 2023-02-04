@@ -1,4 +1,4 @@
-import { Vector2D } from "./2D_Vector"
+import { Vector2D } from "./2DVector"
 
 export class PhysicsObject {
     constructor ()

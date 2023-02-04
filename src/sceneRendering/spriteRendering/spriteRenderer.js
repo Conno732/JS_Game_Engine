@@ -14,7 +14,6 @@ export class SpriteRenderer {
         this.sprites = {}
         this.context = context
         this.curSprite = null
-        this.oldTimeStamp = 0
     }
 
     importSpriteSheet(name, img, w, h, fps) {
@@ -27,8 +26,7 @@ export class SpriteRenderer {
         this.curSprite.frame = 0
     }
 
-    update(x, y, timeStamp){
-        var time = timeStamp - this.oldTimeStamp
+    update(x, y, dt){
         var frames = this.curSprite.frames[this.curSprite.frame]
         this.context.drawImage(
             this.curSprite.Sheet,
@@ -41,7 +39,7 @@ export class SpriteRenderer {
             64,
             64);
         
-        if (time > 1000 * this.curSprite.fps) {
+        if (dt > 1000 * this.curSprite.fps) {
             this.oldTimeStamp = timeStamp
             if (this.curSprite.frame >= this.curSprite.frameCount - 1){
                 this.curSprite.frame = -1
